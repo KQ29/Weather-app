@@ -21,24 +21,24 @@ A simple and responsive weather application that allows users to check the curre
 1. Clone the repository:
    ```bash
    git clone https://github.com/KQ29/Weather-app.git
-Navigate to the project directory:
-bash
-Copy code
+
+# Navigate to the project directory:
 cd Weather-app
-Install any dependencies (if applicable):
-bash
-Copy code
+
+# Install any dependencies (if applicable):
 npm install
-Create a config.js file to store your API key (replace your_api_key_here with your actual key):
-javascript
-Copy code
+
+# Create a config.js file to store your API key (replace your_api_key_here with your actual key):
 export const API_KEY = 'your_api_key_here';
-Build the SCSS (if needed) and open index.html in a browser to view the app.
-Usage
-Enter the name of your city in the search bar.
-Click on the search icon to get current weather information.
-Toggle between Celsius and Fahrenheit using the toggle button below the temperature.
-Contributing
+
+# Build the SCSS (if needed) and open index.html in a browser to view the app.
+
+## Usage
+- Enter the name of your city in the search bar.
+- Click on the search icon to get current weather information.
+- Toggle between Celsius and Fahrenheit using the toggle button below the temperature.
+
+## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request.
 
 ## License
