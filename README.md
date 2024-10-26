@@ -22,16 +22,16 @@ A simple and responsive weather application that allows users to check the curre
    ```bash
    git clone https://github.com/KQ29/Weather-app.git
 
-# Navigate to the project directory:
+## Navigate to the project directory:
 cd Weather-app
 
-# Install any dependencies (if applicable):
+## Install any dependencies (if applicable):
 npm install
 
-# Create a config.js file to store your API key (replace your_api_key_here with your actual key):
+## Create a config.js file to store your API key (replace your_api_key_here with your actual key):
 export const API_KEY = 'your_api_key_here';
 
-# Build the SCSS (if needed) and open index.html in a browser to view the app.
+## Build the SCSS (if needed) and open index.html in a browser to view the app.
 
 ## Usage
 - Enter the name of your city in the search bar.
