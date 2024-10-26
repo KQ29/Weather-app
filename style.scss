@@ -1,0 +1,237 @@
+// Variables
+$primary-color: #06283D;
+$secondary-color: #dff6ff;
+$hover-color: #1363DF;
+$gradient-background: linear-gradient(135deg, #06283D, #1363DF, #47B5FF);
+$white: #fff;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+// Body
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $gradient-background;
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.5s ease;
+}
+
+// Container
+.container {
+  position: relative;
+  width: 400px;
+  height: 105px;
+  background: $white;
+  padding: 28px 32px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease-out, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Search Box
+.search-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  input {
+    color: $primary-color;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 32px;
+    border: none;
+
+    &::placeholder {
+      font-size: 20px;
+      color: $primary-color;
+      text-transform: capitalize;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: $primary-color;
+    background: $secondary-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background: $hover-color;
+      color: $white;
+      transform: scale(1.1);
+    }
+  }
+
+  .fa-location-dot {
+    font-size: 30px;
+    color: $primary-color;
+  }
+
+  .fa-magnifying-glass {
+    font-size: 24px;
+    color: $primary-color;
+  }
+}
+
+// Weather Box
+.weather-box {
+  text-align: center;
+  transition: opacity 0.5s ease;
+
+  img {
+    width: 60%;
+    margin-top: 30px;
+  }
+
+  .temperature {
+    color: $primary-color;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    position: relative;
+
+    span {
+      font-size: 1.5rem;
+      margin-left: 4px;
+    }
+  }
+
+  .description {
+    color: $primary-color;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+}
+
+// Toggle Temperature Button
+.toggle-temp {
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: $primary-color;
+  background: linear-gradient(135deg, $secondary-color, #47B5FF);
+  border: none;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+
+  &:hover {
+    background: linear-gradient(135deg, #47B5FF, $hover-color);
+    color: $white;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Weather Details
+.weather-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+
+  .humidity, .wind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    i {
+      color: $primary-color;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .text {
+      .value {
+        font-size: 22px;
+        font-weight: 700;
+        color: $primary-color;
+      }
+      
+      .unit {
+        font-size: 14px;
+        font-weight: 500;
+        color: $primary-color;
+        margin-left: 2px;
+      }
+    }
+
+    p {
+      color: $primary-color;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+  }
+}
+
+// Not Found Message
+.not-found {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  transform: scale(0);
+  opacity: 0;
+  display: none;
+
+  img {
+    width: 70%;
+  }
+
+  p {
+    color: $primary-color;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+  }
+}
+
+// Animations
+.weather-box, .weather-details {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

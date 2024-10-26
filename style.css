@@ -1,0 +1,235 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #06283D, #1363DF, #47B5FF);
+    font-family: "Roboto", sans-serif;
+    transition: background 0.5s ease;
+  }
+  
+  /* Container Styling */
+  .container {
+    position: relative;
+    width: 400px;
+    height: 105px;
+    background: #fff;
+    padding: 28px 32px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s ease-out, box-shadow 0.4s ease;
+  }
+  
+  .container:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Search Box Styling */
+  .search-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-box input {
+    color: #06283D;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 32px;
+    border: none;
+  }
+  
+  .search-box input::placeholder {
+    font-size: 20px;
+    color: #06283D;
+    text-transform: capitalize;
+  }
+  
+  .search-box button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #06283D;
+    background: #dff6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .search-box button:hover {
+    background: #1363DF;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  .search-box .fa-location-dot {
+    font-size: 30px;
+    color: #06283D;
+  }
+  
+  .search-box .fa-magnifying-glass {
+    font-size: 24px;
+    color: #06283D;
+  }
+  
+  /* Weather Box Styling */
+  .weather-box {
+    text-align: center;
+    transition: opacity 0.5s ease;
+  }
+  
+  .weather-box img {
+    width: 60%;
+    margin-top: 30px;
+  }
+  
+  .weather-box .temperature {
+    color: #06283D;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .weather-box .temperature span {
+    font-size: 1.5rem;
+    margin-left: 4px;
+  }
+  
+  .weather-box .description {
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  /* Toggle Temperature Button */
+  .toggle-temp {
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #06283D;
+    background: linear-gradient(135deg, #dff6ff, #47B5FF);
+    border: none;
+    border-radius: 20px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+  }
+  
+  .toggle-temp:hover {
+    background: linear-gradient(135deg, #47B5FF, #1363DF);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .toggle-temp:active {
+    transform: translateY(1px);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Weather Details Styling */
+  .weather-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  .weather-details .humidity,
+  .weather-details .wind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .weather-details .humidity i,
+  .weather-details .wind i {
+    color: #06283D;
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+  
+  .weather-details .humidity .text .value,
+  .weather-details .wind .text .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #06283D;
+  }
+  
+  .weather-details .humidity .text .unit,
+  .weather-details .wind .text .unit {
+    font-size: 14px;
+    font-weight: 500;
+    color: #06283D;
+    margin-left: 2px;
+  }
+  
+  .weather-details .humidity p,
+  .weather-details .wind p {
+    color: #06283D;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+  
+  /* Not Found Styling */
+  .not-found {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
+  
+  .not-found img {
+    width: 70%;
+  }
+  
+  .not-found p {
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+  }
+  
+  /* Animations */
+  .weather-box,
+  .weather-details {
+    transform: scale(0);
+    opacity: 0;
+  }
+  
+  .fadeIn {
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
